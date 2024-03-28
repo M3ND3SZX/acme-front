@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,22 +8,33 @@
     <script type="module" src="./tailwind.config.js" defer></script>
     <link href="./output.css" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
-    
+    <link rel="icon" href="./img/movie-media-player.svg">
 
     <title>Acme-filmes</title>
 </head>
-<body class="bg-preto">
-   <header class="bg-amarelo h-32 w-5/6 rounded-ee-3xl flex items-center  p-6">
-        <div class="logo">
-            <img class=" w-56 h-14" src="./img/Logo.svg" alt="logo do site">
-         </div>
-   </header>
-   <main class="pt-8 ">
 
-    <div id="cardFilme" class="flex flex-row gap-16 pl-24">
+<body class="bg-preto p-0 ">
+    <header class="flex justify-start w-full items-center ">
+        <div class="bg-amarelo h-32 w-5/6 rounded-ee-3xl flex items-center justify- p-6">
+            <div class="logo">
+                <img class=" w-56 h-14" src="./img/Logo.svg" alt="logo do site">
+            </div>
+        <div class="flex">
+            <input type="search"  placeholder="Buscar filme" class=" pl-6 w-96 h-10 bg-branco rounded-full" >
+        </div>
+            
+            </div>
+        </div>
+        <img class=" w-56 h-14" src="./img/menu.svg" alt="logo do site">
 
-    </div>
+    </header>
+    <main class="pt-8">
 
-   </main>
+        <div id="cardFilme" class="flex  flex-wrap gap-16 pl-24 w-full h-4/5  ">
+
+        </div>
+
+    </main>
 </body>
+
 </html>

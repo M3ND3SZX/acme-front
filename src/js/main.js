@@ -6,7 +6,6 @@ import {getFilmes, getFilme, postFilme, putFilme, deleteFilme} from "./filmes.js
 
 
 function criarCard(filme){
-    const cardFilme = document.getElementById('cardFilme')
     const capaFilme = document.createElement('img')
     capaFilme.src = filme.foto_capa
     const card = document.createElement('div')
@@ -27,11 +26,13 @@ function criarCard(filme){
     card.classList.add(
         'flex',
         'flex-col',
-        'gap-3.5'
-    )
+        'gap-3.5',
+        'justify-center',
+        'items-center'    )
 
    titulo.classList.add(
-    'text-600'
+    'text-600',
+    'items-center'
    )
     capaFilme.classList.add(
         'w-40',
@@ -45,8 +46,7 @@ function criarCard(filme){
   
     bgTexto.append(titulo)
     card.append(capaFilme, bgTexto)
-    cardFilme.append(card)
-    return cardFilme
+    return card
 }
 
 // function criarCard(filme){
@@ -72,7 +72,7 @@ function criarCard(filme){
 
 async function preencherContainer (){
 
-    const container = document.querySelector('body')
+    const container = document.querySelector('#cardFilme')
 
     const filmes = await getFilmes()
 
@@ -84,16 +84,18 @@ async function preencherContainer (){
 }
 preencherContainer()
 
-/*const filme = {
-    "id": "1",
-    "nome": "Velozes e Furiosos",
-    "sinopse": "Brian O'Conner é um policial que se infiltra no submundo dos rachas de rua para investigar uma série de furtos. Enquanto tenta ganhar o respeito e a confiança do líder Dom Toretto, ele corre o risco de ser desmascarado.",
-    "duracao": "1:46:00",
-    "data_lancamento": "2001-09-28",
-    "data_relancamento": null,
-    "foto_capa": "https://upload.wikimedia.org/wikipedia/pt/thumb/2/20/2_Fast_2_Furious_2003.jpg/230px-2_Fast_2_Furious_2003.jpg",
-    "valor_unitario": 30.00
-}*/
+const filme = {
+
+    "nome": "Procurando Nemo",
+    "sinopse": "O passado reserva tristes memórias para Marlin nos recifes de coral, onde perdeu sua esposa e toda a ninhada. Agora, ele cria seu único filho Nemo com todo o cuidado do mundo, mas o pequeno e simpático peixe-palhaço acaba exagerando durante uma simples discussão e acaba sendo capturado por um mergulhador. Agora, o pai super protetor precisa entrar em ação e parte numa busca incansável pelo mar aberto, na esperança de encontrar seu amado filhote. No meio do caminho, ele acaba conhecendo Dory e, juntos, a dupla vai viver uma incrível aventura. Enquanto isso, Nemo também vive uma intensa experiência ao lado de seus novos amigos habitantes de um aquário, pois eles precisam ajudá-lo a escapar do destino que lhe foi reservado: ir parar nas mãos da terrível Darla, sobrinha do dentista que o capturou.",
+    "duracao": "1:41:00",
+    "data_lancamento": "2003-07-04",
+    "data_relancamento": "2002-10-12",
+    "foto_capa": "https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/91/25/21/20154443.jpg",
+    "valor_unitario": 15.00
+}
+
+
 
 deleteFilme()
 putFilme()
