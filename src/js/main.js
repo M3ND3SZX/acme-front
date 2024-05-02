@@ -19,16 +19,11 @@ function criarCard(filme){
         'rounded-md',
         'flex',
         'justify-center',
-        'items-center'
-
-    )
+        'items-center',
+        'text-center' 
+        )
    
-    card.classList.add(
-        'flex',
-        'flex-col',
-        'gap-3.5',
-        'justify-center',
-        'items-center'    )
+   
 
    titulo.classList.add(
     'text-600',
@@ -46,27 +41,27 @@ function criarCard(filme){
   
     bgTexto.append(titulo)
     card.append(capaFilme, bgTexto)
+    card.addEventListener('click',()=>{
+     window.location.href = './infoFilmes.html?id='+ filme.id
+
+    
+    })
+
+    card.classList.add(
+        'flex',
+        'flex-col',
+        'gap-3.5',
+        'justify-center',
+        'items-center' ,
+        'cursor-pointer',
+        'hover:scale-110'
+        )
     return card
 }
 
-// function criarCard(filme){
-    
-//     const capaFilme = document.createElement('img')
-//     capaFilme.src = filme.foto_capa
-//     const card = document.createElement('div')
-//     const titulo = document.createElement('h2')
-//     titulo.textContent = `${filme.id} - ${filme.nome}`
-//     const texto = document.createElement('textarea')
-//     texto.textContent = filme.sinopse
-   
-//     capaFilme.classList.add(
-//         'w-40',
-//         'h-60',
-//         'rounded-2xl'
-//     )
-//     card.append(capaFilme, titulo, texto)
-//     return card
-// }
+
+
+
 
 
 
@@ -82,21 +77,25 @@ async function preencherContainer (){
         console.log(card)
     });
 }
+
 preencherContainer()
 
 const filme = {
 
-    "nome": "Procurando Nemo",
-    "sinopse": "O passado reserva tristes memórias para Marlin nos recifes de coral, onde perdeu sua esposa e toda a ninhada. Agora, ele cria seu único filho Nemo com todo o cuidado do mundo, mas o pequeno e simpático peixe-palhaço acaba exagerando durante uma simples discussão e acaba sendo capturado por um mergulhador. Agora, o pai super protetor precisa entrar em ação e parte numa busca incansável pelo mar aberto, na esperança de encontrar seu amado filhote. No meio do caminho, ele acaba conhecendo Dory e, juntos, a dupla vai viver uma incrível aventura. Enquanto isso, Nemo também vive uma intensa experiência ao lado de seus novos amigos habitantes de um aquário, pois eles precisam ajudá-lo a escapar do destino que lhe foi reservado: ir parar nas mãos da terrível Darla, sobrinha do dentista que o capturou.",
-    "duracao": "1:41:00",
-    "data_lancamento": "2003-07-04",
-    "data_relancamento": "2002-10-12",
-    "foto_capa": "https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/91/25/21/20154443.jpg",
-    "valor_unitario": 15.00
+    "nome": "Jogos Vorazes 5 ",
+    "sinopse": "Antes de Katniss Everdeen, sua revolução e o envolvimento do 13 distrito, houve o Presidente Snow, ou melhor, Coriolanus Snow. A Cantiga dos Pássaros e das Serpentes é a história do ditador de Panem antes de chegar ao poder. Anos antes, Coriolanus Snow vivia na capital, nascido na grande casa de Snow, que não anda muito bem em popularidade e financeiramente. Ele se prepara para sua oportunidade de glória como um mentor dos Jogos. O destino de sua Casa depende da pequena chance de Coriolanus ser capaz de encantar, enganar e manipular seus colegas para conseguir mentorar o tributo vencedor. Foi lhe dado a tarefa humilhante de mentorar a garota tributo do Distrito 12. Os destinos dos dois estão agora interligados – toda escolha que Coriolanus fizer terá consequências dentro e fora do Jogo. Na arena, a batalha será mortal e a garota terá que sobreviver a cada segundo. Fora da arena, Coriolanus começa a se apegar a garota, mas terá que ter que qualquer passo que der, fará com que a menina e ele mesmo sofram de alguma maneira.",
+    "duracao": "2:38:00",
+    "data_lancamento": "2023-11-15",
+    "data_relancamento": null,
+    "foto_capa": "https://br.web.img2.acsta.net/c_310_420/pictures/23/09/20/17/54/4013241.jpg",
+    "valor_unitario": 35.00
 }
 
 
 
-deleteFilme()
-putFilme()
+
+
+
+//deleteFilme(52)
+// putFilme(filme, 50)
 //postFilme (filme)
