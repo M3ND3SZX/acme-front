@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Acme-Filme</title>
+    <link href="../output.css" rel="stylesheet">
+    <script src="../js/login.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="./img/movie-media-player.svg">
+</head>
+
+<body class="bg-amarelo h-screen">
+
+    <main class="flex justify-center items-center h-screen">
+
+        <div class="flex justify-around bg-white w-3/5 h-4/5 rounded-3xl">
+
+            <img src="../../img/movieLogin.png" alt="">
+
+            <form class="flex justify-center flex-col items-center ">
+
+                <div class="flex justify-center items-center flex-col">
+
+                    <div> <label class="text-black font-semibold">Email</label> </div>
+
+                    <input type="email" name="email" id="email" placeholder="seu@email" class="p-2.5 rounded-2xl">
+                </div>
+                <div class="flex justify-center items-center flex-col">
+                    <div><label class="font-semibold ">Senha</label></div>
+                    <input type="password" name="senha" id="password" placeholder="Insira sua senha"
+                        class="p-2.5 rounded-2xl">
+                </div>
+
+                <div>
+                    <button type="button" class="p-2.5"> Recuperar Senha</button>
+                </div>
+
+           
+                    <div> 
+                    <button type="button" class=" text-amarelo  font-bold" id="entrar"> Entrar</button>
+                </div>
+                
+
+
+                <div>
+                    <button type="button" class="p-2.5"> Registrar</button>
+                </div>
+        </div>
+        </form>
+    </main>
+</body>
+
+</html>

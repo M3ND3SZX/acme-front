@@ -2,7 +2,6 @@
 
 import {getFilmes, getFilme, postFilme, putFilme, deleteFilme} from "./filmes.js"
 
-//console.table(await getFilme(1))
 
 
 function criarCard(filme){
@@ -35,7 +34,6 @@ function criarCard(filme){
         'rounded-2xl',
         'border-solid',
         'border-4',
-        'border-indigo-600',
         'border-amarelo'
     )
   
@@ -90,6 +88,16 @@ const filme = {
     "foto_capa": "https://br.web.img2.acsta.net/c_310_420/pictures/23/09/20/17/54/4013241.jpg",
     "valor_unitario": 35.00
 }
+
+
+function validarLogin() {
+    window.location.href = '../cms/screens/login.html'
+
+}
+
+const button = document.getElementById('burger')
+
+button.addEventListener('click', validarLogin)
 
 
 

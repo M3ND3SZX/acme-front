@@ -1,6 +1,6 @@
 'use strict'
 
-import {getFilme} from "./filmes.js"
+import {getFilme, getFilmes} from "./filmes.js"
 
 const indice = new URLSearchParams(window.location.search).get('id');
 
@@ -8,39 +8,30 @@ const infoFilme = await getFilme(indice)
 console.log(infoFilme)
 
 function preencherCampos(filme){
-    
     const titulo = document.getElementById('titulo')
     titulo.textContent = filme.nome
-    console.log(filme)
-
     
-    const imgCapa = document.getElementById('poster')
-    imgCapa.src = filme.foto_capa
-
-
+    const poster = document.getElementById('poster')
+    poster.src = filme.foto_capa
     const sinopse = document.getElementById('sinopse')
-    sinopse.textContent = filme.sinopse
-
     const duracao = document.getElementById('duracao')
-    duracao.textContent = "DURAÇÃO: "+ tratarDuracao(filme.duracao) 
-
     const lancamento = document.getElementById('lancamento')
-    lancamento.textContent = "DATA DE LANÇAMENTO: "+ tratarData(filme.data_lancamento)
-
-    const valor = document.getElementById('valor')
-    valor.textContent='R$ '+ filme.valor_unitario
-
+    lancamento.textContent = "DATA DE LANÇAMENTO: "+tratarData(filme.data_lancamento)
     const relancamento = document.getElementById('relancamento')
-
     if(filme.relancamento){
-        relancamento.textContent = "DATA DE RELANÇAMENTO: "+tratarData(filme.data_relancamento)
+        relancamento.textContent = "DATA DE RELANÇAMENTO: " + tratarData(filme.data_relancamento)
     } else {
         relancamento.textContent = "DATA DE RELANÇAMENTO: Sem previsão"
     }
+    const valor = document.getElementById('valor')
+    valor.textContent='R$ '+filme.valor_unitario
+    duracao.textContent="DURAÇÃO: "+tratarDuracao(filme.duracao) 
+    sinopse.textContent=filme.sinopse
 
-   
-   
+    
 }
+
+
 
 
 function tratarDuracao(string){

@@ -1,68 +1,68 @@
-<!DOCTYPE html>
+
+ <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <link href="./output.css" rel="stylesheet">
-    <script src="info.js" defer ></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                    'amarelo': '#F0CD13',
-                    'preto': '#000000',
-                    'branco': '#ffffff',
-          
-                    },
-                    spacing: {
-                        imgg: '450px',
-                        capa: '230px',
-                        card: "200px",
-                        body: '100vh'
-
-                    },
-                    zIndex: {
-                        img: '-1',
-                    }
-                }
-            }
-        }
-    </script>
-    <title>Document</title>
+    <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="../js/info.js" defer></script>
+    <link rel="icon" href="./img/movie-media-player.svg">
+   
+    <title>Sobre o filme</title>
 </head>
 <body class="bg-preto p-0 ">
+
     <header class="flex justify-start w-full items-center  ">
 
-        <nav class="fixed top-[0px] bg-amarelo h-32 w-5/6 rounded-ee-3xl flex items-center  p-6">
+        <nav class="top-[0px] bg-amarelo h-32 w-5/6 rounded-ee-3xl flex items-center  p-6">
           
-            <div class="fixed z-[2]">
+            <div class="fixed ">
                 <a href="./index.html">
                     <img src="./img/seta.png" alt="">
                 </a>
             </div>
            
-            <div class="flex w-full justify-evenly items-center gap-16">
-                
-
+            <div class="flex w-full justify-evenly gap-16">
+                <h1 id="titulo" class="p-3 font-bold"></h1>
                 </div>
             </div>
         </nav>
 
-        <div class="fixed bg-branco w-[200px] h-[100px] z-[10] fixed top-[159px]">
-        <h1 class=" bg-[#151414] " id="titulo"></h1>
-    </div>
-
+      
     </header>
-    <main class="pt-8">
 
-        <div id="cardFilme" class="flex items-center   flex-wrap gap-16 pl-24 w-full h-4/5 ">
+    <main class=" flex justify-around  mt-12">
+
+        <div class="flex items-center ">
+            <div class="posterFilme bg-white text-black h-fit flex flex-col items-center border-4 border-amarelo rounded-2xl">
+                <img id="poster" class="w-64">
+                
+            </div>
+            <div class="conteudo text-white flex gap-10 ml-5 flex-col">
+                <p id="duracao" class="duracao text-white text-4xl"></p>
+                <p id="lancamento" class="lancamento text-white text-4xl"></p>
+                <p id="genero" class="lancamento  text-white text-4xl"></p>
+                <p id="relancamento" class="relançamento text-white text-4xl"></p>
+                <p id="genero" class="relançamento text-white text-4xl"></p>
+                <p id="ator" class="ator text-white text-4xl"></p>
+                <p id="diretor" class="diretor text-white text-4xl"></p>
+                <img id="icone" class="w-36">
+                <p id="valor" class="text-4xl border-4 text-white border-amarelo rounded-full px-10 py-2 w-fit"></p>
+            </div>
 
         </div>
-
-
-
+        <div class="flex items-center justify-center flex-col text-white w-2/5">
+            <p class="text-5xl">SINOPSE</p>
+            <p id="sinopse" class="text-2xl text-white "></p>
+        </div>
     </main>
 </body>
 </html>
+
+<style>
+    .posterFilme>img {
+        aspect-ratio: 2/3;
+    }
+</style>
